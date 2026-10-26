@@ -4,5 +4,7 @@ Ensure you have the Live Server VS Code extension or some other means of viewing
 To run script_one.js, ensure the <script> element in index.html is defined as: 
 <script src="script_one.js"></script>
 
+
+
 To run pong.js, ensure the <script> element in index.html is defined as:
 <script src="pong.js"></script>
