@@ -39,7 +39,7 @@ const ceiling = Bodies.rectangle(width / 2, -wallThickness / 2, width, wallThick
 const leftWall = Bodies.rectangle(-wallThickness / 2, height / 2, wallThickness, height, wallOptions);
 const rightWall = Bodies.rectangle(width + wallThickness / 2, height / 2, wallThickness, height, wallOptions);
 
-// Create two rectangles (x, y, width, height)
+// Create three rectangles (x, y, width, height)
 const boxA = Bodies.rectangle(400, 200, 80, 80, {
 render: {
         sprite: {
@@ -49,10 +49,21 @@ render: {
         }
     }
 });
+
 const boxB = Bodies.rectangle(450, 50, 80, 80, {
 render: {
         sprite: {
-            texture: '../images/catOne.png',
+            texture: '../images/catTwo.png',
+            xScale: 0.25,
+            yScale: 0.25
+        }
+    }
+});
+
+const boxC = Bodies.rectangle(450, 50, 80, 80, {
+render: {
+        sprite: {
+            texture: '../images/catThree.png',
             xScale: 0.25,
             yScale: 0.25
         }
@@ -72,7 +83,7 @@ const circle = Bodies.circle(380, 100, 40, {
 });
 
 // Add all bodies to the canvas
-Composite.add(engine.world, [boxA, boxB, circle, ground, ceiling, leftWall, rightWall]);
+Composite.add(engine.world, [boxA, boxB, boxC, circle, ground, ceiling, leftWall, rightWall]);
 
 // Add mouse interaction to drag items
 const mouse = Mouse.create(render.canvas);
