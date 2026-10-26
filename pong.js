@@ -13,9 +13,9 @@ const height = 600;
 const wallThickness = 100;
 
 // Gameplay settings
-const BALL_SPEED = 10;        // Constant ball speed (keep below ~30 to avoid tunneling)
+const BALL_SPEED = 10;        // Constant ball speed
 const MIN_X_RATIO = 0.4;      // Ball must always travel at least this much horizontally (0-1)
-const SERVE_DELAY = 800;      // ms pause before the ball launches after a point
+const SERVE_DELAY = 1500;      // ms pause before the ball launches after a point
 
 // Score state
 const score = { left: 0, right: 0 };
@@ -24,7 +24,7 @@ let serving = false;
 // Create the physics engine
 const engine = Engine.create();
 
-// Turn off gravity for top-down Pong gameplay
+// Turn off gravity for pong gameplay
 engine.world.gravity.y = 0;
 engine.world.gravity.x = 0;
 
@@ -59,7 +59,7 @@ const paddleLeft = Bodies.rectangle(60, height / 2, paddleWidth, paddleHeight, {
     isStatic: true,
     render: {
         sprite: {
-            texture: 'images/catLeft.png',
+            texture: 'images/left.png',
             xScale: 0.25,
             yScale: 0.25
         }
@@ -70,7 +70,7 @@ const paddleRight = Bodies.rectangle(width - 60, height / 2, paddleWidth, paddle
     isStatic: true,
     render: {
         sprite: {
-            texture: 'images/catRight.png',
+            texture: 'images/right.png',
             xScale: 0.25,
             yScale: 0.25
         }
@@ -155,7 +155,7 @@ const paddleSpeed = 10;
 Events.on(engine, 'beforeUpdate', () => {
     const halfPaddle = paddleHeight / 2;
 
-    // Left Paddle Controls (W / S)
+    // Left Paddle Controls (W / S), prevent from going off screen
     if (keys.w && paddleLeft.position.y - halfPaddle > 10) {
         Body.setPosition(paddleLeft, { x: paddleLeft.position.x, y: paddleLeft.position.y - paddleSpeed });
     }
@@ -163,7 +163,7 @@ Events.on(engine, 'beforeUpdate', () => {
         Body.setPosition(paddleLeft, { x: paddleLeft.position.x, y: paddleLeft.position.y + paddleSpeed });
     }
 
-    // Right Paddle Controls (Up / Down)
+    // Right Paddle Controls (Up / Down), prevent from going off screen
     if (keys.ArrowUp && paddleRight.position.y - halfPaddle > 10) {
         Body.setPosition(paddleRight, { x: paddleRight.position.x, y: paddleRight.position.y - paddleSpeed });
     }

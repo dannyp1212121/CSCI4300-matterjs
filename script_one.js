@@ -10,7 +10,8 @@ const Engine = Matter.Engine,
 // Define screen dimensions
 const width = 800;
 const height = 600;
-const wallThickness = 100;
+
+const wallThickness = 100; // Border thickness
 
 // Create the physics engine
 const engine = Engine.create();
@@ -60,7 +61,7 @@ render: {
     }
 });
 
-const boxC = Bodies.rectangle(450, 50, 80, 80, {
+const boxC = Bodies.rectangle(200, 50, 80, 80, {
 render: {
         sprite: {
             texture: '../images/catThree.png',
