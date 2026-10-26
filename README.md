@@ -1,8 +1,27 @@
-This repo contains code demonstrating the basic functions of matter.js using two primary scripts. 
-Ensure you have the Live Server VS Code extension or some other means of viewing HTML websites.
-<br><br>
-To run script_one.js, ensure the <script> element in index.html is defined as: 
+# Matter.js Demonstrations
+
+This repository contains code demonstrating the core capabilities of **Matter.js** through two primary JavaScript implementations.
+
+---
+
+## Prerequisites
+
+To run these demonstrations, you will need a local development server. We recommend using the **Live Server** extension in VS Code or any equivalent static file server.
+
+---
+
+## How to Run
+
+Open `index.html` and set the `<script>` tag to target the script you want to execute:
+
+### 1. Basic Physics Demo (`script_one.js`)
+To view the basic Matter.js physics setup and interactive shapes:
+```html
 <script src="script_one.js"></script>
-<br><br>
-To run pong.js, ensure the <script> element in index.html is defined as:
+```
+
+### 2. Interactive Pong Game (`pong.js`)
+To run the 2-player physics-based Pong game:
+```html
 <script src="pong.js"></script>
+```
