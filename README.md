@@ -7,6 +7,7 @@ This repository contains code demonstrating the core capabilities of **Matter.js
 ## Prerequisites
 
 To run these demonstrations, you will need a local development server. I recommend using the **Live Server** extension in VS Code.
+
 ---
 
 ## How to Run
